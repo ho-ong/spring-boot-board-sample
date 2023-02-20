@@ -34,7 +34,7 @@ public class MemberService {
         return memberDTOList;
     }
 
-    // 회원정보 상세조회
+    // 회원정보 조회
     public MemberDTO findById(Long id) {
         Optional<MemberEntity> optionalMemberEntity = memberRepository.findById(id);
 
