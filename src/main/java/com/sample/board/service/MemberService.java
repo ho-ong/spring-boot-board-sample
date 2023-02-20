@@ -88,4 +88,17 @@ public class MemberService {
         }
     }
 
+    // 이메일 중복체크
+    public String emailCheck(String memberEmail) {
+        Optional<MemberEntity> byMemberEmail = memberRepository.findByMemberEmail(memberEmail);
+
+        if(byMemberEmail.isPresent()) {
+            // 조회결과가 있으면 사용불가
+            return null;
+        } else {
+            // 조회결과가 없으면 사용가능
+            return "ok";
+        }
+    }
+
 }
