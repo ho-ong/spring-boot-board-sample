@@ -7,8 +7,8 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Setter
 @Getter
+@Setter
 @Table(name = "member")
 public class MemberEntity {
 

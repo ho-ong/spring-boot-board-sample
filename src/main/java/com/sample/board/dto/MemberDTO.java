@@ -5,9 +5,9 @@ import lombok.*;
 
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 public class MemberDTO {
 
     private Long id;
