@@ -22,6 +22,7 @@
         const emailCheck = () => {
             const email = document.getElementById("memberEmail").value;
             const checkResult = document.getElementById("check-result");
+
             console.log("입력값 : ", email);
 
             $.ajax({
@@ -31,7 +32,7 @@
                     "memberEmail": email
                 },
                 success: function(res) {
-                    console.log("요청성공", res);
+                    console.log("요청 성공", res);
                     if(res == "ok") {
                         console.log("사용가능한 이메일");
                         checkResult.style.color = "green";
@@ -43,7 +44,7 @@
                     }
                 },
                 error: function(err) {
-                    console.log("에러발생", err);
+                    console.log("에러 발생", err);
                 }
             });
         }
