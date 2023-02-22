@@ -39,3 +39,39 @@
   - 파일 첨부(file upload)
     - 단일 파일 첨부
   - 추가 기능 - ajax 댓글 처리
+
+<br>
+
+## MySQL DataBase Table
+```roomsql
+create table board (
+  id             bigint auto_increment primary key,
+  created_time   datetime     null,
+  updated_time   datetime     null,
+  board_contents varchar(500) null,
+  board_hits     int          null,
+  board_pass     varchar(255) null,
+  board_title    varchar(255) null,
+  board_writer   varchar(20)  not null,
+  file_attached  int          null
+);
+
+create table board_file (
+  id                 bigint auto_increment primary key,
+  created_time       datetime     null,
+  updated_time       datetime     null,
+  original_file_name varchar(255) null,
+  stored_file_name   varchar(255) null,
+  board_id           bigint       null,
+  constraint FKcfxqly70ddd02xbou0jxgh4o3 foreign key (board_id) references board_table (id) on delete cascade
+);
+```
+
+<br>
+
+## MySQL DataBase 계정 생성 및 권한 부여
+```roomsql
+create database springboot_board;
+create hoong@localhost identified by '8888';
+grant all privileges on springboot_board.* to hoong@localhost;
+```
