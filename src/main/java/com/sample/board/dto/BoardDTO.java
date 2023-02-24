@@ -25,6 +25,17 @@ public class BoardDTO {
     private LocalDateTime boardCreatedTime;
     private LocalDateTime boardUpdatedTime;
 
+    // 파일 첨부
+    // 다중 파일 첨부
+    private List<MultipartFile> boardFile;
+    // 원본 파일 이름
+    private List<String> originalFileName;
+    // 서버 저장용 파일 이름
+    private List<String> storedFileName;
+    // 파일 첨부 여부 (첨부 1, 미첨부 0)
+    private int fileAttached;
+
+    /*
     // 단일 파일 첨부
     private MultipartFile boardFile;
     // 원본 파일 이름
@@ -33,6 +44,7 @@ public class BoardDTO {
     private String storedFileName;
     // 파일 첨부 여부 (첨부 1, 미첨부 0)
     private int fileAttached;
+    */
 
     public BoardDTO(Long id, String boardWriter, String boardTitle, int boardHits, LocalDateTime boardCreatedTime) {
         this.id = id;
@@ -58,11 +70,26 @@ public class BoardDTO {
             // 0
             boardDTO.setFileAttached(boardEntity.getFileAttached());
         } else {
-            // 단일 파일 첨부
             // 1
+            // 다중 파일 첨부
+            List<String> originalFileNameList = new ArrayList<>();
+            List<String> storedFileNameList = new ArrayList<>();
+            boardDTO.setFileAttached(boardEntity.getFileAttached());
+
+            for(BoardFileEntity boardFileEntity : boardEntity.getBoardFileEntityList()) {
+                originalFileNameList.add(boardFileEntity.getOriginalFileName());
+                storedFileNameList.add(boardFileEntity.getStoredFileName());
+            }
+
+            boardDTO.setOriginalFileName(originalFileNameList);
+            boardDTO.setStoredFileName(storedFileNameList);
+
+            /*
+            // 단일 파일 첨부
             boardDTO.setFileAttached(boardEntity.getFileAttached());
             boardDTO.setOriginalFileName(boardEntity.getBoardFileEntityList().get(0).getOriginalFileName());
             boardDTO.setStoredFileName(boardEntity.getBoardFileEntityList().get(0).getStoredFileName());
+            */
         }
 
         return boardDTO;

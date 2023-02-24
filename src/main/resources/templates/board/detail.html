@@ -10,6 +10,8 @@
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 </head>
 <body>
+    <h2>Detail</h2>
+
     <table>
         <tr>
             <th>id</th>
@@ -35,19 +37,31 @@
             <th>contents</th>
             <td th:text="${board.boardContents}"></td>
         </tr>
-
         <!-- 파일 이미지 -->
         <tr th:if="${board.fileAttached == 1}">
             <th>image</th>
-            <td>
-                <img th:src="@{|/upload/${board.storedFileName}|}" alt="">
+            <!-- 다중 파일 이미지 -->
+            <td th:each="fileName: ${board.storedFileName}">
+                <img th:src="@{|/upload/${fileName}|}" alt="" style="max-width: 300px;" />
             </td>
+
+            <!-- 단일 파일 이미지
+            <td>
+                <img th:src="@{|/upload/${board.storedFileName}|}" alt="" style="max-width: 300px;" />
+            </td>
+            -->
         </tr>
     </table>
 
-    <button onclick="listReq()">목록</button>
-    <button onclick="updateReq()">수정</button>
-    <button onclick="deleteReq()">삭제</button>
+    <br>
+
+    <div>
+        <button onclick="listReq()">목록</button>
+        <button onclick="updateReq()">수정</button>
+        <button onclick="deleteReq()">삭제</button>
+    </div>
+
+    <br>
 
     <!-- 댓글 작성 부분 -->
     <div id="comment-write">
@@ -55,6 +69,8 @@
         <input type="text" id="commentContents" placeholder="내용" />
         <button id="comment-write-btn" onclick="commentWrite()">댓글 작성</button>
     </div>
+
+    <br>
 
     <!-- 댓글 출력 부분 -->
     <div id="comment-list">
