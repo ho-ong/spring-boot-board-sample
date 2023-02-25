@@ -93,7 +93,7 @@ public class MemberService {
         Optional<MemberEntity> byMemberEmail = memberRepository.findByMemberEmail(memberEmail);
 
         if(byMemberEmail.isPresent()) {
-            // 조회결과가 있으면 사용불가
+            // 조회결과가 있으면 사용불가능
             return null;
         } else {
             // 조회결과가 없으면 사용가능

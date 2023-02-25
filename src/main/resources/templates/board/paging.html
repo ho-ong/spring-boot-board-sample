@@ -12,11 +12,11 @@
 
     <table>
         <tr>
-            <th>id</th>
-            <th>title</th>
-            <th>writer</th>
-            <th>date</th>
-            <th>hits</th>
+            <th>아이디</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>작성시간</th>
+            <th>조회수</th>
         </tr>
         <tr th:each="board: ${boardList}">
             <td th:text="${board.id}"></td>
@@ -28,10 +28,8 @@
     </table>
 
     <!-- 게시글 페이징 -->
-    <!-- 첫번째 페이지로 이동 -->
-    <a th:href="@{/board/paging(page=1)}">First</a>
-    <!-- 이전 링크 활성화 / 비활성화 -->
-    <a th:href="${boardList.first} ? '#' : @{/board/paging(page=${boardList.number})}">prev</a>
+    <a th:href="@{/board/paging(page=1)}">처음</a>
+    <a th:href="${boardList.first} ? '#' : @{/board/paging(page=${boardList.number})}">이전</a>
     <!-- 페이지 번호 링크 (현재 페이지는 숫자만) -->
     <span th:each="page: ${#numbers.sequence(startPage, endPage)}">
         <!-- 현재 페이지는 링크 없이 숫자만 -->
@@ -41,10 +39,8 @@
             <a th:href="@{/board/paging(page=${page})}" th:text="${page}"></a>
         </span>
     </span>
-    <!-- 다음 링크 활성화 / 비활성화 -->
-    <a th:href="${boardList.last} ? '#' : @{/board/paging(page=${boardList.number + 2})}">next</a>
-    <!-- 마지막 페이지로 이동 -->
-    <a th:href="@{/board/paging(page=${boardList.totalPages})}">Last</a>
+    <a th:href="${boardList.last} ? '#' : @{/board/paging(page=${boardList.number + 2})}">다음</a>
+    <a th:href="@{/board/paging(page=${boardList.totalPages})}">마지막</a>
 </body>
     <script>
         const writeReq = () => {

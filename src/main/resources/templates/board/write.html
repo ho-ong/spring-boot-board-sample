@@ -10,13 +10,13 @@
 <body>
     <!-- enctype="multipart/form-data" : 파일이나 이미지를 서버로 전송 -->
     <form action="/board/write" method="post" enctype="multipart/form-data">
-        writer : <input type="text" name="boardWriter" /><br>
-        pass : <input type="text" name="boardPass" /><br>
-        title : <input type="text" name="boardTitle" /><br>
-        contents : <textarea name="boardContents" cols="30" rows="10"></textarea><br>
+        작성자 : <input type="text" name="boardWriter" /><br>
+        비밀번호 : <input type="text" name="boardPass" /><br>
+        제목 : <input type="text" name="boardTitle" /><br>
+        내용 : <textarea name="boardContents" cols="30" rows="10"></textarea><br>
         <!-- 파일 첨부 -->
         <!-- 다중 파일 첨부 (multiple) -->
-        file : <input type="file" name="boardFile" multiple /><br>
+        파일 : <input type="file" name="boardFile" multiple /><br>
         <input type="submit" value="게시글 작성" />
     </form>
 </body>
