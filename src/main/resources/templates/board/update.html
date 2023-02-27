@@ -10,10 +10,10 @@
 <body>
     <form action="/board/update" method="post" name="updateForm">
         <input type="hidden" name="id" th:value="${boardUpdate.id}" />
-        writer : <input type="text" name="boardWriter" th:value="${boardUpdate.boardWriter}" readonly /><br>
-        pass : <input type="text" name="boardPass" id="boardPass" /><br>
-        title : <input type="text" name="boardTitle" th:value="${boardUpdate.boardTitle}" /><br>
-        contents : <textarea name="boardContents" cols="30" rows="10" th:text="${boardUpdate.boardContents}"></textarea><br>
+        작성자 : <input type="text" name="boardWriter" th:value="${boardUpdate.boardWriter}" readonly /><br>
+        비밀번호 : <input type="text" name="boardPass" id="boardPass" /><br>
+        제목 : <input type="text" name="boardTitle" th:value="${boardUpdate.boardTitle}" /><br>
+        내용 : <textarea name="boardContents" cols="30" rows="10" th:text="${boardUpdate.boardContents}"></textarea><br>
         <input type="hidden" name="boardHits" th:value="${boardUpdate.boardHits}" />
         <input type="button" value="게시글 수정" onclick="boardUpdate()" />
     </form>

@@ -52,22 +52,22 @@ public class BoardService {
 
             /*
             // 단일 파일 첨부
-            // 1. DTO에 담긴 파일을 꺼냄
+            // 1. DTO에 담긴 파일 꺼내기
             MultipartFile boardFile = boardDTO.getBoardFile();
-            // 2. 파일의 이름을 가져옴
+            // 2. 파일의 이름 가져오기
             String originalFilename = boardFile.getOriginalFilename();
-            // 3. 서버 저장용 이름을 만듦
+            // 3. 서버 저장용 이름 만들기
             String storedFileName = System.currentTimeMillis() + "_" + originalFilename;
-            // 4. 저장 경로 설정 (windows, mac)
+            // 4. 저장 경로 설정하기 (windows, mac)
             // String savePath = "C:/springboot_img/" + storedFileName;
             String savePath = "/Users/ho_ong/Documents/project/spring-boot-board-sample/src/main/resources/springboot_img/" + storedFileName;
-            // 5. 해당 경로에 파일 저장
+            // 5. 해당 경로에 파일 저장하기
             boardFile.transferTo(new File(savePath));
-            // 6. board 테이블에 해당 데이터 save 처리
+            // 6. board 테이블에 해당 데이터 save 처리하기
             BoardEntity boardEntity = BoardEntity.toSaveFileEntity(boardDTO);
             Long savedId = boardRepository.save(boardEntity).getId();
             BoardEntity board = boardRepository.findById(savedId).get();
-            // 7. board_file 테이블에 해당 데이터 save처리
+            // 7. board_file 테이블에 해당 데이터 save 처리하기
             BoardFileEntity boardFileEntity = BoardFileEntity.toBoardFileEntity(board, originalFilename, storedFileName);
             boardFileRepository.save(boardFileEntity);
             */
