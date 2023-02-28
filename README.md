@@ -1,12 +1,16 @@
 # spring-boot-board-sample
 > Spring Boot를 사용한 게시판 기능 구현 샘플.
 
+<br>
+
 ## 개발 환경(Development Environment)
 - IDE : IntelliJ IDEA Community Edition
 - Language : JAVA 11 (JDK 11.0.18)
 - Framework : Spring Boot 2.7.8
 - Build Tool : Gradle 7.6
 - DBMS : MySQL 8.0.31 for Linux
+
+<br>
 
 ## 주요 기능(Main Function)
 - 회원(member)
@@ -18,6 +22,8 @@
   - 회원정보 수정(update) : /member/update
   - 회원정보 삭제(delete) : /member/delete/{id}
 
+<br>
+
 - 게시판(board)
   - 게시글 작성(write) : /board/write
   - 게시글 목록(list) : /board/
@@ -26,8 +32,10 @@
   - 게시글 삭제(delete) : /board/delete/{id}
   - 게시글 페이징(paging) : /board/paging
     - /board/paging?page=1
-  - 파일 첨부(file upload) : /board/write
+  - 파일 첨부(file upload) : /board/write, /board/detail
     - 단일 파일 첨부, 다중 파일 첨부
+
+<br>
 
 ## 추가 기능(Add Function)
 - 회원(member)
@@ -35,6 +43,8 @@
 
 - 게시판(board)
   - ajax 댓글 작성 : /comment/write
+
+<br>
 
 ## MySQL DataBase 테이블
 ```SQL
@@ -60,6 +70,8 @@ create table board_file (
     constraint FK_BOARD_ID foreign key (board_id) references board (id) on delete cascade
 );
 ```
+
+<br>
 
 ## MySQL DataBase 계정 생성 및 권한 부여
 ```SQL
