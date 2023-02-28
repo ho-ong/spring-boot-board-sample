@@ -1,6 +1,6 @@
 spring:
+  # server port
   server:
-    # server port
     port: 8080
 
   # file size
@@ -15,6 +15,8 @@ spring:
     url: jdbc:mysql://localhost:3306/springboot_board?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
     username: hoong
     password: 8888
+
+  # thymeleaf
   thymeleaf:
     cache: false
 
@@ -23,5 +25,6 @@ spring:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     open-in-view: false
     show-sql: true
+    format_sql: true
     hibernate:
       ddl-auto: create
