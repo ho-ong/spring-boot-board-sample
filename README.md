@@ -1,16 +1,12 @@
 # spring-boot-board-sample
 > Spring Boot를 사용한 게시판 기능 구현 샘플.
 
-<br>
-
 ## 개발 환경(Development Environment)
 - IDE : IntelliJ IDEA Community Edition
 - Language : JAVA 11 (JDK 11.0.18)
 - Framework : Spring Boot 2.7.8
 - Build Tool : Gradle 7.6
 - DBMS : MySQL 8.0.31 for Linux
-
-<br>
 
 ## 주요 기능(Main Function)
 - 회원(member)
@@ -33,8 +29,6 @@
   - 파일 첨부(file upload) : /board/write
     - 단일 파일 첨부, 다중 파일 첨부
 
-<br>
-
 ## 추가 기능(Add Function)
 - 회원(member)
   - ajax 이메일 중복체크 : /member/email-check
@@ -42,10 +36,8 @@
 - 게시판(board)
   - ajax 댓글 작성 : /comment/write
 
-<br>
-
-## MySQL DataBase Table
-```roomsql
+## MySQL DataBase 테이블
+```SQL
 create table board (
     id             bigint auto_increment primary key,
     created_time   datetime     null,
@@ -65,14 +57,12 @@ create table board_file (
     original_file_name varchar(255) null,
     stored_file_name   varchar(255) null,
     board_id           bigint       null,
-    constraint FKcfxqly70ddd02xbou0jxgh4o3 foreign key (board_id) references board_table (id) on delete cascade
+    constraint FK_BOARD_ID foreign key (board_id) references board (id) on delete cascade
 );
 ```
 
-<br>
-
 ## MySQL DataBase 계정 생성 및 권한 부여
-```roomsql
+```SQL
 create database springboot_board;
 create hoong@localhost identified by '8888';
 grant all privileges on springboot_board.* to hoong@localhost;
