@@ -22,8 +22,6 @@
   - 회원정보 수정(update) : /member/update
   - 회원정보 삭제(delete) : /member/delete/{id}
 
-<br>
-
 - 게시판(board)
   - 게시글 작성(write) : /board/write
   - 게시글 목록(list) : /board/
@@ -43,6 +41,15 @@
 
 - 게시판(board)
   - ajax 댓글 작성 : /comment/write
+
+<br>
+
+## MySQL DataBase 계정 생성 및 권한 부여
+```SQL
+create database springboot_board;
+create hoong@localhost identified by '8888';
+grant all privileges on springboot_board.* to hoong@localhost;
+```
 
 <br>
 
@@ -67,15 +74,6 @@ create table board_file (
     original_file_name varchar(255) null,
     stored_file_name   varchar(255) null,
     board_id           bigint       null,
-    constraint FK_BOARD_ID foreign key (board_id) references board (id) on delete cascade
+    constraint fk_board_file foreign key (board_id) references board (id) on delete cascade
 );
-```
-
-<br>
-
-## MySQL DataBase 계정 생성 및 권한 부여
-```SQL
-create database springboot_board;
-create hoong@localhost identified by '8888';
-grant all privileges on springboot_board.* to hoong@localhost;
 ```
