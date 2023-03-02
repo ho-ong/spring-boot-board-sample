@@ -44,7 +44,7 @@ public class BoardEntity extends BaseEntity {
     @OneToMany(mappedBy = "boardEntity", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<CommentEntity> commentEntityList = new ArrayList<>();
 
-    public static BoardEntity toSaveEntity(BoardDTO boardDTO) {
+    public static BoardEntity toBoardEntity(BoardDTO boardDTO) {
         BoardEntity boardEntity = new BoardEntity();
         boardEntity.setBoardWriter(boardDTO.getBoardWriter());
         boardEntity.setBoardPass(boardDTO.getBoardPass());
@@ -56,7 +56,7 @@ public class BoardEntity extends BaseEntity {
         return boardEntity;
     }
 
-    public static BoardEntity toUpdateEntity(BoardDTO boardDTO) {
+    public static BoardEntity toUpdateBoardEntity(BoardDTO boardDTO) {
         BoardEntity boardEntity = new BoardEntity();
         boardEntity.setId(boardDTO.getId());
         boardEntity.setBoardWriter(boardDTO.getBoardWriter());
@@ -67,7 +67,7 @@ public class BoardEntity extends BaseEntity {
         return boardEntity;
     }
 
-    public static BoardEntity toSaveFileEntity(BoardDTO boardDTO) {
+    public static BoardEntity toBoardFileEntity(BoardDTO boardDTO) {
         BoardEntity boardEntity = new BoardEntity();
         boardEntity.setBoardWriter(boardDTO.getBoardWriter());
         boardEntity.setBoardPass(boardDTO.getBoardPass());

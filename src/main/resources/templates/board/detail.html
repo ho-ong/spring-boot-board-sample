@@ -11,7 +11,6 @@
 </head>
 <body>
     <h2>Detail</h2>
-
     <table>
         <tr>
             <th>게시글번호</th>
@@ -44,7 +43,6 @@
             <td th:each="fileName: ${board.storedFileName}">
                 <img th:src="@{|/upload/${fileName}|}" alt="" style="max-width: 300px;" />
             </td>
-
             <!-- 단일 파일 이미지
             <td>
                 <img th:src="@{|/upload/${board.storedFileName}|}" alt="" style="max-width: 300px;" />
@@ -52,16 +50,11 @@
             -->
         </tr>
     </table>
-
-    <br>
-
     <div>
         <button onclick="listReq()">목록</button>
         <button onclick="updateReq()">수정</button>
         <button onclick="deleteReq()">삭제</button>
     </div>
-
-    <br>
 
     <!-- 댓글 작성 부분 -->
     <div id="comment-write">
@@ -69,8 +62,6 @@
         <input type="text" id="commentContents" placeholder="내용" />
         <button id="comment-write-btn" onclick="commentWrite()">댓글 작성</button>
     </div>
-
-    <br>
 
     <!-- 댓글 출력 부분 -->
     <div id="comment-list">
@@ -93,6 +84,7 @@
     <script th:inline="javascript">
         const listReq = () => {
             console.log("목록요청");
+            // location.href = "/board/";
             const page = [[${page}]];
             location.href = "/board/paging?page=" + page;
         }
@@ -114,7 +106,6 @@
             const writer = document.getElementById("commentWriter").value;
             const contents = document.getElementById("commentContents").value;
             const id = [[${board.id}]];
-
             console.log("작성자 : " + writer);
             console.log("내용 : " + contents);
             console.log("게시글번호 : " + id);
@@ -129,9 +120,7 @@
                 },
                 success: function (res) {
                     console.log("요청성공", res);
-
                     let output = "<table>";
-
                     output += "<tr><th>댓글번호</th>";
                     output += "<th>작성자</th>";
                     output += "<th>내용</th>";
@@ -147,7 +136,6 @@
                     }
 
                     output += "</table>";
-
                     document.getElementById("comment-list").innerHTML = output;
                     document.getElementById("commentWriter").value = "";
                     document.getElementById("commentContents").value = "";

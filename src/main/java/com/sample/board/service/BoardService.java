@@ -32,12 +32,12 @@ public class BoardService {
         // 파일 첨부 여부에 따라 로직 분리
         if(boardDTO.getBoardFile().isEmpty()) {
             // 첨부 파일 없음
-            BoardEntity boardEntity = BoardEntity.toSaveEntity(boardDTO);
+            BoardEntity boardEntity = BoardEntity.toBoardEntity(boardDTO);
             boardRepository.save(boardEntity);
         } else {
             // 첨부 파일 있음
             // 다중 파일 첨부
-            BoardEntity boardEntity = BoardEntity.toSaveFileEntity(boardDTO);
+            BoardEntity boardEntity = BoardEntity.toBoardFileEntity(boardDTO);
             Long savedId = boardRepository.save(boardEntity).getId();
             BoardEntity board = boardRepository.findById(savedId).get();
 
@@ -108,7 +108,7 @@ public class BoardService {
 
     // 게시글 수정
     public BoardDTO update(BoardDTO boardDTO) {
-        BoardEntity boardEntity = BoardEntity.toUpdateEntity(boardDTO);
+        BoardEntity boardEntity = BoardEntity.toUpdateBoardEntity(boardDTO);
         boardRepository.save(boardEntity);
         return findById(boardDTO.getId());
     }
