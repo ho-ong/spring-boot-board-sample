@@ -64,7 +64,7 @@ public class BoardService {
             // 5. 해당 경로에 파일 저장하기
             boardFile.transferTo(new File(savePath));
             // 6. board 테이블에 해당 데이터 save 처리하기
-            BoardEntity boardEntity = BoardEntity.toSaveFileEntity(boardDTO);
+            BoardEntity boardEntity = BoardEntity.toBoardFileEntity(boardDTO);
             Long savedId = boardRepository.save(boardEntity).getId();
             BoardEntity board = boardRepository.findById(savedId).get();
             // 7. board_file 테이블에 해당 데이터 save 처리하기
