@@ -44,7 +44,7 @@
 
 <br>
 
-## MySQL DataBase 계정 생성 및 권한 부여
+## MySQL Database 계정 생성 및 권한 부여
 ```SQL
 create database springboot_board;
 create hoong@localhost identified by '8888';
@@ -53,7 +53,7 @@ grant all privileges on springboot_board.* to hoong@localhost;
 
 <br>
 
-## MySQL DataBase 테이블
+## MySQL Database 테이블
 ```SQL
 create table board (
     id             bigint auto_increment primary key,

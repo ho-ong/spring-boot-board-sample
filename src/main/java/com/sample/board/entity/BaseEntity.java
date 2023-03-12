@@ -2,6 +2,7 @@ package com.sample.board.entity;
 
 import lombok.Getter;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
@@ -16,7 +17,7 @@ public class BaseEntity {
     @Column(updatable = false)
     private LocalDateTime createdTime;
 
-    @CreationTimestamp
+    @UpdateTimestamp
     @Column(insertable = false)
     private LocalDateTime updatedTime;
 
