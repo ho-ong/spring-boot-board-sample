@@ -1,30 +1,34 @@
+# Server
+server:
+  port: 8080
+
+# Spring
 spring:
-  # server port
-  server:
-    port: 8080
-
-  # file size
-  servlet:
-    multipart:
-      maxFileSize: 100MB
-      maxRequestSize: 100MB
-
-  # database
+  # Database
+  # MySQL
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/springboot_board?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
     username: hoong
     password: 8888
 
-  # thymeleaf
-  thymeleaf:
-    cache: false
-
-  # spring data jpa
+  # JPA
   jpa:
+    database: mysql
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     open-in-view: false
     show-sql: true
-    format_sql: true
     hibernate:
       ddl-auto: create
+    properties:
+      hibernate.format_sql: true
+
+  # Thymeleaf
+  thymeleaf:
+    cache: false
+
+  # File Size
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
