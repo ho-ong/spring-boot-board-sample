@@ -6,6 +6,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Detail</title>
+    <!-- css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.0/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <h2>Detail</h2>
@@ -23,5 +26,11 @@
             <td th:text="${member.memberPassword}"></td>
         </tr>
     </table>
+    <button onclick="listReq()">목록</button>
 </body>
+    <script th:inline="javascript">
+        const listReq = () => {
+            location.href = "/member/";
+        }
+    </script>
 </html>

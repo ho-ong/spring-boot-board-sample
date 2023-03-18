@@ -6,12 +6,15 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Detail</title>
+    <!-- css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.0/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
     <!-- jquery cdn -->
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 </head>
 <body>
     <h2>Detail</h2>
-    <table>
+    <table class="board-detail">
         <tr>
             <th>게시글번호</th>
             <td th:text="${board.id}"></td>
@@ -38,7 +41,7 @@
         </tr>
         <!-- 파일 이미지 -->
         <tr th:if="${board.fileAttached == 1}">
-            <th>이미지</th>
+            <th style="vertical-align: top;">이미지</th>
             <!-- 다중 파일 이미지 -->
             <td th:each="fileName: ${board.storedFileName}">
                 <img th:src="@{|/upload/${fileName}|}" alt="" style="max-width: 300px;" />
@@ -50,19 +53,19 @@
             -->
         </tr>
     </table>
-    <div>
+    <div class="btn-board-detail">
         <button onclick="listReq()">목록</button>
         <button onclick="updateReq()">수정</button>
         <button onclick="deleteReq()">삭제</button>
     </div>
 
+    <h3>Comment</h3>
     <!-- 댓글 작성 부분 -->
     <div id="comment-write">
         <input type="text" id="commentWriter" placeholder="작성자" />
         <input type="text" id="commentContents" placeholder="내용" />
         <button id="comment-write-btn" onclick="commentWrite()">댓글 작성</button>
     </div>
-
     <!-- 댓글 출력 부분 -->
     <div id="comment-list">
         <table>

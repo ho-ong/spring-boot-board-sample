@@ -6,10 +6,13 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Update</title>
+    <!-- css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.0/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <form action="/member/update" method="post">
-        <input type="hidden" th:value="${updateMember.id}" name="id" /><br>
+        <input type="hidden" th:value="${updateMember.id}" name="id" />
         이메일 : <input type="text" th:value="${updateMember.memberEmail}" name="memberEmail" readonly /><br>
         이름 : <input type="text" th:value="${updateMember.memberName}" name="memberName" /><br>
         비밀번호 : <input type="password" th:value="${updateMember.memberPassword}" name="memberPassword" /><br>
