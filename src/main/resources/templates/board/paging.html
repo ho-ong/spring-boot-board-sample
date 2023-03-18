@@ -6,9 +6,12 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Paging</title>
+    <!-- css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.0/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <button onclick="writeReq()">게시글 작성</button>
+    <button onclick="writeReq()" class="btn-board-paging">게시글 작성</button>
     <table>
         <tr>
             <th>아이디</th>
@@ -27,27 +30,27 @@
     </table>
 
     <!-- 게시글 페이징 -->
-    <!-- 시작 페이지로 이동 -->
-    <!-- /board/paging?page=1 -->
-    <a th:href="@{/board/paging(page=1)}">시작</a>
-    <!-- 이전 링크 활성화 / 비활성화 -->
-    <a th:href="${boardList.first} ? '#' : @{/board/paging(page=${boardList.number})}">이전</a>
-
-    <!-- 페이지 번호 링크 (현재 페이지는 숫자만 표시) -->
-    <!-- for(int page = startPage; page <= endPage; page++) -->
-    <span th:each="page: ${#numbers.sequence(startPage, endPage)}">
-				<!-- 현재 페이지는 링크 없이 숫자만 표시 -->
-        <span th:if="${page == boardList.number + 1}" th:text="${page}"></span>
-        <!-- 현재 페이지 번호가 아닌 다른 페이지 번호에는 링크를 표시 -->
-        <span th:unless="${page == boardList.number + 1}">
-            <a th:href="@{/board/paging(page=${page})}" th:text="${page}"></a>
+    <div class="board-paging">
+        <!-- 시작 페이지로 이동 -->
+        <!-- /board/paging?page=1 -->
+        <a th:href="@{/board/paging(page=1)}">시작</a>
+        <!-- 이전 링크 활성화 / 비활성화 -->
+        <a th:href="${boardList.first} ? '#' : @{/board/paging(page=${boardList.number})}">이전</a>
+        <!-- 페이지 번호 링크 (현재 페이지는 숫자만 표시) -->
+        <!-- for(int page = startPage; page <= endPage; page++) -->
+        <span th:each="page: ${#numbers.sequence(startPage, endPage)}">
+                    <!-- 현재 페이지는 링크 없이 숫자만 표시 -->
+            <span th:if="${page == boardList.number + 1}" th:text="${page}"></span>
+            <!-- 현재 페이지 번호가 아닌 다른 페이지 번호에는 링크를 표시 -->
+            <span th:unless="${page == boardList.number + 1}">
+                <a th:href="@{/board/paging(page=${page})}" th:text="${page}"></a>
+            </span>
         </span>
-    </span>
-
-    <!-- 다음 링크 활성화 / 비활성화 -->
-    <a th:href="${boardList.last} ? '#' : @{/board/paging(page=${boardList.number + 2})}">다음</a>
-    <!-- 마지막 페이지로 이동 -->
-    <a th:href="@{/board/paging(page=${boardList.totalPages})}">마지막</a>
+        <!-- 다음 링크 활성화 / 비활성화 -->
+        <a th:href="${boardList.last} ? '#' : @{/board/paging(page=${boardList.number + 2})}">다음</a>
+        <!-- 마지막 페이지로 이동 -->
+        <a th:href="@{/board/paging(page=${boardList.totalPages})}">마지막</a>
+    </div>
 </body>
     <script>
         const writeReq = () => {
