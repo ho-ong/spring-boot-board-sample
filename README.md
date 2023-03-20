@@ -66,35 +66,35 @@ create table member (
 // 게시판
 create table board (
     id             bigint not null primary key auto_increment,
-    created_time   datetime     null,
-    updated_time   datetime     null,
-    board_contents varchar(500) null,
-    board_hits     int          null,
-    board_pass     varchar(255) null,
-    board_title    varchar(255) null,
-    board_writer   varchar(20)  not null,
-    file_attached  int          null
+    created_time   datetime default now() null,
+    updated_time   datetime               null,
+    board_contents varchar(500)           null,
+    board_hits     int default 0          null,
+    board_pass     varchar(255)           null,
+    board_title    varchar(255)           null,
+    board_writer   varchar(20)            not null,
+    file_attached  int default 0          null
 );
 
 // 게시판 파일
 create table board_file (
     id                 bigint not null primary key auto_increment,
-    created_time       datetime     null,
-    updated_time       datetime     null,
-    original_file_name varchar(255) null,
-    stored_file_name   varchar(255) null,
-    board_id           bigint       null,
+    created_time       datetime default now() null,
+    updated_time       datetime               null,
+    original_file_name varchar(255)           null,
+    stored_file_name   varchar(255)           null,
+    board_id           bigint                 null,
     constraint fk_board_file foreign key (board_id) references board (id) on delete cascade
 );
 
 // 댓글
 create table comment (
     id               bigint not null primary key auto_increment,
-    created_time     datetime     null,
-    updated_time     datetime     null,
-    comment_contents varchar(255) null,
-    comment_writer   varchar(20)  not null,
-    board_id         bigint       null,
+    created_time     datetime default now() null,
+    updated_time     datetime               null,
+    comment_contents varchar(255)           null,
+    comment_writer   varchar(20)            not null,
+    board_id         bigint                 null,
     constraint fk_comment foreign key (board_id) references board (id) on delete cascade
 );
 ```
