@@ -55,7 +55,7 @@ grant all privileges on springboot_board.* to hoong@localhost;
 
 ## MySQL Database 테이블
 ```SQL
-// 회원
+/* 회원 */
 create table member (
     id              bigint not null primary key auto_increment,
     member_email    varchar(255) unique null,
@@ -63,7 +63,7 @@ create table member (
     member_password varchar(255) null
 );
 
-// 게시판
+/* 게시판 */
 create table board (
     id             bigint not null primary key auto_increment,
     created_time   datetime default now() null,
@@ -76,7 +76,7 @@ create table board (
     file_attached  int default 0          null
 );
 
-// 게시판 파일
+/* 게시판 파일 */
 create table board_file (
     id                 bigint not null primary key auto_increment,
     created_time       datetime default now() null,
@@ -87,7 +87,7 @@ create table board_file (
     constraint fk_board_file foreign key (board_id) references board (id) on delete cascade
 );
 
-// 댓글
+/* 댓글 */
 create table comment (
     id               bigint not null primary key auto_increment,
     created_time     datetime default now() null,
