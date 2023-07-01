@@ -131,30 +131,25 @@ create table comment (
 ###### Index
 <img src="image/page/img_page_index.png" />
 
-###### Main
+###### Member - Main (After Login) & Update
 <img src="image/page/img_page_main.png" />
+<img src="image/page/member/img_page_member_update.png" />
 
-###### Member Login
+###### Member - Login
 <img src="image/page/member/img_page_member_login.png" />
 
-###### Member Join
+###### Member - Join
 <img src="image/page/member/img_page_member_join.png" />
 
-###### Member List
+###### Member - List & Detail
 <img src="image/page/member/img_page_member_list.png" />
-
-###### Member Detail
 <img src="image/page/member/img_page_member_detail.png" />
 
-###### Board Write
+###### Board - Write & Update
 <img src="image/page/board/img_page_board_write.png" />
+<img src="image/page/board/img_page_board_update.png" />
 
-###### Board List
+###### Board - List & Detail & Paging
 <img src="image/page/board/img_page_board_list.png" />
-
-###### Board Detail
 <img src="image/page/board/img_page_board_detail.png" />
-<img src="image/page/board/img_page_board_detail_comment.png" />
-
-###### Board Paging
 <img src="image/page/board/img_page_board_paging.png" />
