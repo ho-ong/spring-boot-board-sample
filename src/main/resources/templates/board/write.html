@@ -13,10 +13,10 @@
 <body>
     <!-- enctype="multipart/form-data" : 파일이나 이미지를 서버로 전송 -->
     <form action="/board/write" method="post" enctype="multipart/form-data">
-        작성자 : <input type="text" name="boardWriter" placeholder="writer" /><br>
-        비밀번호 : <input type="password" name="boardPassword" placeholder="password" /><br>
-        제목 : <input type="text" name="boardTitle" placeholder="title" /><br>
-        내용 : <textarea name="boardContents" cols="30" rows="10" placeholder="contents"></textarea><br>
+        작성자 : <input type="text" name="boardWriter" placeholder="작성자" /><br>
+        비밀번호 : <input type="password" name="boardPassword" placeholder="비밀번호" /><br>
+        제목 : <input type="text" name="boardTitle" placeholder="제목" /><br>
+        내용 : <textarea name="boardContents" cols="30" rows="10" placeholder="내용"></textarea><br>
         <!-- 파일 첨부 -->
         <!-- 다중 파일 첨부 (multiple) -->
         파일 : <input type="file" name="boardFile" multiple /><br>
