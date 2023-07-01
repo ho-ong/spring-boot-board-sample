@@ -13,8 +13,19 @@
 <body>
     <div class="container">
         <h2>안녕하세요! <span th:text="${session.loginEmail}"></span>님</h2>
-        <a href="/member/update">정보수정</a>
-        <a href="/member/logout">로그아웃</a>
+        <div class="btn-index">
+            <button onclick="updateReq()" class="btn-first">정보수정</button>
+            <button onclick="logoutReq()">로그아웃</button>
+        </div>
     </div>
 </body>
+<script>
+        const updateReq = () => {
+            location.href = "/member/update";
+        }
+
+        const logoutReq = () => {
+            location.href = "/member/logout";
+        }
+    </script>
 </html>
