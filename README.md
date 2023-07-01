@@ -71,9 +71,9 @@ grant all privileges on springboot_board.* to hoong@localhost;
 ## MySQL Database Table
 ```SQL
 /* 회원 */
-drop table if exists member;
+drop table if exists springboot_board.member;
 
-create table member (
+create table springboot_board.member (
     id              bigint primary key not null auto_increment,
     member_email    varchar(255) unique null,
     member_name     varchar(255) null,
@@ -82,9 +82,9 @@ create table member (
 
 
 /* 게시판 */
-drop table if exists board;
+drop table if exists springboot_board.board;
 
-create table board (
+create table springboot_board.board (
     id             bigint primary key not null auto_increment,
     created_time   datetime default now() null,
     updated_time   datetime               null,
@@ -98,9 +98,9 @@ create table board (
 
 
 /* 게시판 파일 */
-drop table if exists board_file;
+drop table if exists springboot_board.board_file;
 
-create table board_file (
+create table springboot_board.board_file (
     id                 bigint primary key not null auto_increment,
     created_time       datetime default now() null,
     updated_time       datetime               null,
@@ -112,9 +112,9 @@ create table board_file (
 
 
 /* 댓글 */
-drop table if exists comment;
+drop table if exists springboot_board.comment;
 
-create table comment (
+create table springboot_board.comment (
     id               bigint primary key not null auto_increment,
     created_time     datetime default now() null,
     updated_time     datetime               null,
