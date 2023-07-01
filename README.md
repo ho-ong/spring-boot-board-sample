@@ -151,5 +151,5 @@ create table springboot_board.comment (
 
 ###### Board - List & Paging & Detail
 <img src="image/page/board/img_page_board_list.png" />
-<img src="image/page/board/img_page_board_detail.png" />
 <img src="image/page/board/img_page_board_paging.png" />
+<img src="image/page/board/img_page_board_detail.png" />
