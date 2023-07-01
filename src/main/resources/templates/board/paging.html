@@ -39,7 +39,7 @@
         <!-- 페이지 번호 링크 (현재 페이지는 숫자만 표시) -->
         <!-- for(int page = startPage; page <= endPage; page++) -->
         <span th:each="page: ${#numbers.sequence(startPage, endPage)}">
-                    <!-- 현재 페이지는 링크 없이 숫자만 표시 -->
+            <!-- 현재 페이지는 링크 없이 숫자만 표시 -->
             <span th:if="${page == boardList.number + 1}" th:text="${page}"></span>
             <!-- 현재 페이지 번호가 아닌 다른 페이지 번호에는 링크를 표시 -->
             <span th:unless="${page == boardList.number + 1}">

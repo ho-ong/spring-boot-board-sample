@@ -22,7 +22,7 @@ public class BoardEntity extends BaseEntity {
     private String boardWriter;
 
     @Column
-    private String boardPass;
+    private String boardPassword;
 
     @Column
     private String boardTitle;
@@ -47,7 +47,7 @@ public class BoardEntity extends BaseEntity {
     public static BoardEntity toBoardEntity(BoardDTO boardDTO) {
         BoardEntity boardEntity = new BoardEntity();
         boardEntity.setBoardWriter(boardDTO.getBoardWriter());
-        boardEntity.setBoardPass(boardDTO.getBoardPass());
+        boardEntity.setBoardPassword(boardDTO.getBoardPassword());
         boardEntity.setBoardTitle(boardDTO.getBoardTitle());
         boardEntity.setBoardContents(boardDTO.getBoardContents());
         boardEntity.setBoardHits(0);
@@ -60,7 +60,7 @@ public class BoardEntity extends BaseEntity {
         BoardEntity boardEntity = new BoardEntity();
         boardEntity.setId(boardDTO.getId());
         boardEntity.setBoardWriter(boardDTO.getBoardWriter());
-        boardEntity.setBoardPass(boardDTO.getBoardPass());
+        boardEntity.setBoardPassword(boardDTO.getBoardPassword());
         boardEntity.setBoardTitle(boardDTO.getBoardTitle());
         boardEntity.setBoardContents(boardDTO.getBoardContents());
         boardEntity.setBoardHits(boardDTO.getBoardHits());
@@ -70,7 +70,7 @@ public class BoardEntity extends BaseEntity {
     public static BoardEntity toBoardFileEntity(BoardDTO boardDTO) {
         BoardEntity boardEntity = new BoardEntity();
         boardEntity.setBoardWriter(boardDTO.getBoardWriter());
-        boardEntity.setBoardPass(boardDTO.getBoardPass());
+        boardEntity.setBoardPassword(boardDTO.getBoardPassword());
         boardEntity.setBoardTitle(boardDTO.getBoardTitle());
         boardEntity.setBoardContents(boardDTO.getBoardContents());
         boardEntity.setBoardHits(0);
