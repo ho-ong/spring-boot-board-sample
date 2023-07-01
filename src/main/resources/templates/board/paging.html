@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <button onclick="writeReq()" class="btn-board-paging">게시글 작성</button>
+    <h2>List(Paging)</h2>
     <table>
         <tr>
             <th>아이디</th>
@@ -39,11 +39,13 @@
         <!-- 페이지 번호 링크 (현재 페이지는 숫자만 표시) -->
         <!-- for(int page = startPage; page <= endPage; page++) -->
         <span th:each="page: ${#numbers.sequence(startPage, endPage)}">
-            <!-- 현재 페이지는 링크 없이 숫자만 표시 -->
-            <span th:if="${page == boardList.number + 1}" th:text="${page}"></span>
-            <!-- 현재 페이지 번호가 아닌 다른 페이지 번호에는 링크를 표시 -->
-            <span th:unless="${page == boardList.number + 1}">
-                <a th:href="@{/board/paging(page=${page})}" th:text="${page}"></a>
+            <span th:unless="${page == 0}">
+                <!-- 현재 페이지는 링크 없이 숫자만 표시 -->
+                <span th:if="${page == boardList.number + 1}" th:text="${page}" class="current-page"></span>
+                <!-- 현재 페이지 번호가 아닌 다른 페이지 번호에는 링크를 표시 -->
+                <span th:unless="${page == boardList.number + 1}">
+                    <a th:href="@{/board/paging(page=${page})}" th:text="${page}"></a>
+                </span>
             </span>
         </span>
         <!-- 다음 링크 활성화 / 비활성화 -->
@@ -51,6 +53,8 @@
         <!-- 마지막 페이지로 이동 -->
         <a th:href="@{/board/paging(page=${boardList.totalPages})}">마지막</a>
     </div>
+
+    <button onclick="writeReq()" class="btn-board-paging">게시글 작성</button>
 </body>
     <script>
         const writeReq = () => {
