@@ -28,34 +28,34 @@
 <br>
 
 ## Main Function
-- 회원(member)
-  - 로그인(login) : /member/login
-    - 로그아웃(logout) : /member/logout
-    - 회원가입(join) : /member/join
-    - 회원목록(list) : /member/
-    - 회원정보 조회(detail) : /member/{id}
-    - 회원정보 수정(update) : /member/update
-    - 회원정보 삭제(delete) : /member/delete/{id}
+- 회원(Member)
+    - 로그인(Login) : /member/login
+    - 로그아웃(Logout) : /member/logout
+    - 회원가입(Join) : /member/join
+    - 회원목록(List) : /member/
+    - 회원정보 조회(Detail) : /member/{id}
+    - 회원정보 수정(Update) : /member/update
+    - 회원정보 삭제(Delete) : /member/delete/{id}
 
-- 게시판(board)
-  - 게시글 작성(write) : /board/write
-    - 게시글 목록(list) : /board/
-    - 게시글 조회(detail) : /board/{id}
-    - 게시글 수정(update) : /board/update/{id}
-    - 게시글 삭제(delete) : /board/delete/{id}
-    - 게시글 페이징(paging) : /board/paging
+- 게시판(Board)
+    - 게시글 작성(Write) : /board/write
+    - 게시글 목록(List) : /board/
+    - 게시글 조회(Detail) : /board/{id}
+    - 게시글 수정(Update) : /board/update/{id}
+    - 게시글 삭제(Delete) : /board/delete/{id}
+    - 게시글 페이징(Paging) : /board/paging
         - /board/paging?page=1
-    - 파일 첨부(file upload) : /board/write, /board/detail
-      - 단일 파일 첨부, 다중 파일 첨부
+    - 파일 첨부(File Upload) : /board/write, /board/detail
+        - 단일 파일 첨부, 다중 파일 첨부
 
 <br>
 
 ## Add Function
-- 회원(member)
-    - ajax 이메일 중복체크 : /member/email-check
+- 회원(Member)
+    - Ajax 이메일 중복체크 : /member/email-check
 
-- 게시판(board)
-    - ajax 댓글 작성 : /comment/write
+- 게시판(Board)
+    - Ajax 댓글 작성 : /comment/write
 
 <br>
 
@@ -129,27 +129,27 @@ create table springboot_board.comment (
 
 ## View
 ###### Index
-<img src="image/page/img_page_index.png" />
+<kbd><img src="image/page/img_page_index.png" /></kbd>
 
 ###### Member - Main (After Login) & Update
-<img src="image/page/img_page_main.png" />
-<img src="image/page/member/img_page_member_update.png" />
+<kbd><img src="image/page/img_page_main.png" /></kbd>
+<kbd><img src="image/page/member/img_page_member_update.png" /></kbd>
 
 ###### Member - Login
-<img src="image/page/member/img_page_member_login.png" />
+<kbd><img src="image/page/member/img_page_member_login.png" /></kbd>
 
 ###### Member - Join
-<img src="image/page/member/img_page_member_join.png" />
+<kbd><img src="image/page/member/img_page_member_join.png" /></kbd>
 
 ###### Member - List & Detail
-<img src="image/page/member/img_page_member_list.png" />
-<img src="image/page/member/img_page_member_detail.png" />
+<kbd><img src="image/page/member/img_page_member_list.png" /></kbd>
+<kbd><img src="image/page/member/img_page_member_detail.png" /></kbd>
 
 ###### Board - Write & Update
-<img src="image/page/board/img_page_board_write.png" />
-<img src="image/page/board/img_page_board_update.png" />
+<kbd><img src="image/page/board/img_page_board_write.png" /></kbd>
+<kbd><img src="image/page/board/img_page_board_update.png" /></kbd>
 
 ###### Board - List & Paging & Detail
-<img src="image/page/board/img_page_board_list.png" />
-<img src="image/page/board/img_page_board_paging.png" />
-<img src="image/page/board/img_page_board_detail.png" />
+<kbd><img src="image/page/board/img_page_board_list.png" /></kbd>
+<kbd><img src="image/page/board/img_page_board_paging.png" /></kbd>
+<kbd><img src="image/page/board/img_page_board_detail.png" /></kbd>
